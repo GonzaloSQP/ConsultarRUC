@@ -13,7 +13,7 @@ Public Class FrmConsulta
             If IsNumeric(RUC) AndAlso RUC.Length = 11 Then
 
                 Dim WebClient As New WebClient
-                WebClient.Headers.Add("Authorization", "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Inlvc295ZmFiaWFuczJAZ21haWwuY29tIn0.7yw9kH83ugsWMcGIi6MB3NA2IjP132IhQMRKp3leOB4")
+                WebClient.Headers.Add("Authorization", "Bearer aca va el token")
                 Dim Data = WebClient.DownloadString($"https://dniruc.apisperu.com/api/v1/ruc/{RUC}")
                 Dim objE = JsonConvert.DeserializeObject(Of PersonaEN)(Data)
                 ResultadoTextBox.Text = objE.ToString
